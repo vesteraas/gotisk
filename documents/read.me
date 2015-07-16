@@ -1,4 +1,29 @@
-To clean up the file after editing it with Inkscape:
+The anatomy of a Gotisk SVG image
+=================================
+
+This is the recommended way to work with Gotisk-images:
+
+1. Open the original JPEG with Inkscape.  Choose 'Link' when Inkscape asks you about the image import type.
+
+2. When the image is loaded, choose Layer -> Add Layer, and give the layer the name 'Original'.
+
+3. Create another layer with the name 'Outline'.
+
+4. Select the layer, press CTRL+X (cut), select the 'Original' layer, and press CTRL+V (paste).
+
+5. Lock the 'Original' layer by clicking the little padlock-icon beside it.  Make sure it is locked, by trying to move the image.
+
+6. Select the 'Outline' layer, and use the Bezier tool to outline a letter / symbol in the image.
+
+7. After outlining a letter / symbol, you should select all its paths, and group them together (CTRL+G) even if it consisting of only one path.
+
+8. Left-click the group created above, and set the letter / symbol meaning in the 'Title' input box, and click the 'Set' button.
+
+9. Repeat 7 and 8 until you are finished.
+
+10. Export the document to SVG
+
+11. To clean up the file after editing it with Inkscape:
 
 xmlstarlet ed \
 -N inkscape="http://www.inkscape.org/namespaces/inkscape" \
@@ -12,3 +37,5 @@ xmlstarlet ed \
 -d '//svg:path/@inkscape:connector-curvature' \
 -i '//svg:svg/svg:g' --type attr -n style -v "fill:none;stroke:#ff0000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.0;stroke-dasharray:none" \
 inkscape_document.svg > outline.svg
+
+//TODO: fix code to be able to use svg directly

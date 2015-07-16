@@ -13,6 +13,8 @@ var animateFadeOut = function (group) {
 }
 
 Template.page.onRendered(function () {
+    var documentId = Session.get('documentId');
+
     var that = this;
 
     var getNaturalSortedKeys = function (obj) {
@@ -90,7 +92,7 @@ Template.page.onRendered(function () {
     imageElement.onload = function () {
         var svgElement = Snap('#svg');
 
-        Snap.load('/outlines/1', function (svgFragment) {
+        Snap.load('/outlines/' + documentId, function (svgFragment) {
             svgElement.append(svgFragment);
             svgFragment = Snap('#svg');
 
@@ -124,7 +126,7 @@ Template.page.onRendered(function () {
         });
     }
 
-    imageElement.src = '/images/1';
+    imageElement.src = '/images/' + documentId;
 });
 
 Template.page.helpers({
