@@ -1,0 +1,14 @@
+<template name="page">
+    <div class="center">
+        <ul class="nav pagination">
+            {{#each symbols}}
+            <li class="symbol waves-effect"><a href="#!">{{.}}</a></li>
+            {{/each}}
+            <li id="reset" class="waves-effect"><a href="#!">Nullstill</a></li>
+        </ul>
+    </div>
+    <div id="page" class="container">
+        <svg id="svg"></svg>
+        <img id="image" class="z-depth-5">
+    </div>
+</template>

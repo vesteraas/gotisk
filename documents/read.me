@@ -1,0 +1,14 @@
+To clean up the file after editing it with Inkscape:
+
+xmlstarlet ed \
+-N inkscape="http://www.inkscape.org/namespaces/inkscape" \
+-N svg="http://www.w3.org/2000/svg" \
+-N sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" \
+-d '//*/@id' \
+-d '//sodipodi:*' \
+-d '//svg:g/@style' \
+-d '//svg:path/@style' \
+-d '//svg:path/svg:title' \
+-d '//svg:path/@inkscape:connector-curvature' \
+-i '//svg:svg/svg:g' --type attr -n style -v "fill:none;stroke:#ff0000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.0;stroke-dasharray:none" \
+inkscape_document.svg > outline.svg

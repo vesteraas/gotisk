@@ -1,0 +1,18 @@
+html {
+    margin: 25px;
+}
+
+#svg {
+    position: absolute;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination > li {
+    display: inline;
+    width: auto;
+    height: 35px;
+    padding: 5px 15px;
+}
