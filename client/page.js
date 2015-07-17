@@ -99,6 +99,8 @@ Template.page.onRendered(function () {
             $('#svg').attr('width', $('#image').width());
             $('#svg').attr('height', $('#image').height());
 
+
+
             var groups = svgFragment.selectAll('g');
             that.groups = groups;
 
@@ -109,6 +111,8 @@ Template.page.onRendered(function () {
             });
 
             var symbolMap = scan(groups);
+
+            console.log(symbolMap);
 
             var symbols = getNaturalSortedKeys(symbolMap);
 
