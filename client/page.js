@@ -36,23 +36,23 @@ Template.page.onRendered(function () {
         return result;
     }
 
-    var scan = function (groups) {
-        var result = {};
-
-        var getTitle = function (group) {
-            var children = group.children();
-            for (var n = 0; n < children.length; n++) {
-                var child = children[n];
-                if ('title' === child.type) {
-                    if (child.node.textContent) {
-                        return child.node.textContent.toLowerCase();
-                    } else {
-                        return child.node.innerHTML.toLowerCase();
-                    }
+    var getTitle = function (group) {
+        var children = group.children();
+        for (var n = 0; n < children.length; n++) {
+            var child = children[n];
+            if ('title' === child.type) {
+                if (child.node.textContent) {
+                    return child.node.textContent.toLowerCase();
+                } else {
+                    return child.node.innerHTML.toLowerCase();
                 }
             }
-            return null;
         }
+        return null;
+    }
+
+    var scan = function (groups) {
+        var result = {};
 
         _.each(groups, function (group) {
             var title = getTitle(group);
@@ -72,7 +72,7 @@ Template.page.onRendered(function () {
     var assignHoverAnims = function (groups) {
         _.each(groups, function (group, index) {
             if (index > 0) {
-                group.hover(function () {
+                group.hover(function (event) {
                     this.animate({
                         'stroke-opacity': '0.25',
                         'stroke-width': 10
@@ -101,6 +101,12 @@ Template.page.onRendered(function () {
 
             var groups = svgFragment.selectAll('g');
             that.groups = groups;
+
+            _.each(groups, function (group) {
+                group.attr({
+                    'stroke-opacity': '0.0'
+                })
+            });
 
             var symbolMap = scan(groups);
 

@@ -31,11 +31,17 @@ xmlstarlet ed \
 -N sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" \
 -d '//*/@id' \
 -d '//sodipodi:*' \
+-d '//svg:metadata' \
+-d '//svg:defs' \
 -d '//svg:g/@style' \
+-d '//svg:g/svg:image' \
 -d '//svg:path/@style' \
+-d '//svg:path/@sodipodi:nodetypes' \
+-d '//svg:path/@inkscape:original-d' \
+-d '//svg:path/@inkscape:path-effect' \
 -d '//svg:path/svg:title' \
 -d '//svg:path/@inkscape:connector-curvature' \
--i '//svg:svg/svg:g' --type attr -n style -v "fill:none;stroke:#ff0000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.0;stroke-dasharray:none" \
-inkscape_document.svg > outline.svg
+-i '//svg:svg/svg:g[@inkscape:label="Outline"]' --type attr -n style -v "fill:none;stroke:#ff0000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.0;stroke-dasharray:none" \
+original.svg > outline.svg
 
 //TODO: fix code to be able to use svg directly
