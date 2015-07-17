@@ -23,10 +23,11 @@ Meteor.publish("visitors", function () {
 });
 
 Meteor.methods({
-    'logVisit': function (info) {
+    'logVisit': function (documentId, info) {
         console.log(info);
         Visitors.insert({
             'date': new Date(),
+            'documentId': documentId,
             'info': info
         });
     }

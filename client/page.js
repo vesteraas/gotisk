@@ -28,9 +28,9 @@ var getTitle = function (group) {
 }
 
 Template.page.onRendered(function () {
-    Meteor.call('logVisit', bowser);
-
     var documentId = Session.get('documentId');
+
+    Meteor.call('logVisit', documentId, bowser);
 
     var that = this;
 
