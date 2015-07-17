@@ -12,7 +12,24 @@ var animateFadeOut = function (group) {
     }, 1000);
 }
 
+var getTitle = function (group) {
+    var children = group.children();
+    for (var n = 0; n < children.length; n++) {
+        var child = children[n];
+        if ('title' === child.type) {
+            if (child.node.textContent) {
+                return child.node.textContent.toLowerCase();
+            } else {
+                return child.node.innerHTML.toLowerCase();
+            }
+        }
+    }
+    return null;
+}
+
 Template.page.onRendered(function () {
+    Meteor.call('logVisit', bowser);
+
     var documentId = Session.get('documentId');
 
     var that = this;
@@ -36,21 +53,6 @@ Template.page.onRendered(function () {
         return result;
     }
 
-    var getTitle = function (group) {
-        var children = group.children();
-        for (var n = 0; n < children.length; n++) {
-            var child = children[n];
-            if ('title' === child.type) {
-                if (child.node.textContent) {
-                    return child.node.textContent.toLowerCase();
-                } else {
-                    return child.node.innerHTML.toLowerCase();
-                }
-            }
-        }
-        return null;
-    }
-
     var scan = function (groups) {
         var result = {};
 
@@ -72,16 +74,23 @@ Template.page.onRendered(function () {
     var assignHoverAnims = function (groups) {
         _.each(groups, function (group, index) {
             if (index > 0) {
+                group.click(function (event) {
+                    $('#svg').tooltip({delay: 50});
+                });
                 group.hover(function (event) {
-                    this.animate({
-                        'stroke-opacity': '0.25',
-                        'stroke-width': 10
-                    }, 1000);
+                    if (!that.symbolSelections[getTitle(group)]) {
+                        this.animate({
+                            'stroke-opacity': '0.25',
+                            'stroke-width': 10
+                        }, 1000);
+                    }
                 }, function () {
-                    this.animate({
-                        'stroke-opacity': '0.0',
-                        'stroke-width': 5
-                    }, 1000);
+                    if (!that.symbolSelections[getTitle(group)]) {
+                        this.animate({
+                            'stroke-opacity': '0.0',
+                            'stroke-width': 5
+                        }, 1000);
+                    }
                 });
             }
         });
@@ -99,8 +108,6 @@ Template.page.onRendered(function () {
             $('#svg').attr('width', $('#image').width());
             $('#svg').attr('height', $('#image').height());
 
-
-
             var groups = svgFragment.selectAll('g');
             that.groups = groups;
 
@@ -112,11 +119,10 @@ Template.page.onRendered(function () {
 
             var symbolMap = scan(groups);
 
-            console.log(symbolMap);
-
             var symbols = getNaturalSortedKeys(symbolMap);
 
             that.symbolMap = symbolMap;
+            that.symbolSelections = {};
 
             $('body').keyup(function (e) {
                 if (e.keyCode == 27) { // escape key maps to keycode `27`
@@ -159,9 +165,11 @@ Template.page.events({
                 symbol = $(event.currentTarget).children()[0].innerHTML;
             }
 
-            var hideGroups = template.symbolMap[symbol];
+            template.symbolSelections[symbol] = true;
 
-            _.each(hideGroups, function (group) {
+            var showGroups = template.symbolMap[symbol];
+
+            _.each(showGroups, function (group) {
                 animateFadeIn(group);
             });
         } else {
@@ -176,6 +184,8 @@ Template.page.events({
                 symbol = $(event.currentTarget).children()[0].innerHTML;
             }
 
+            template.symbolSelections[symbol] = false;
+
             var hideGroups = template.symbolMap[symbol];
 
             _.each(hideGroups, function (group) {
@@ -185,6 +195,7 @@ Template.page.events({
     },
     'mousedown #reset': function (event, template) {
         _.each(template.groups, function (group) {
+            template.symbolSelections[getTitle(group)] = false;
             animateFadeOut(group);
             $(".nav>li").removeClass('active');
         });

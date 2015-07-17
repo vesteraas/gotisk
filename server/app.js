@@ -17,3 +17,17 @@ Router.route('/images/:id', function () {
     this.response.write(data);
     this.response.end();
 }, {where: 'server'});
+
+Meteor.publish("visitors", function () {
+    return Visitors.find();
+});
+
+Meteor.methods({
+    'logVisit': function (info) {
+        console.log(info);
+        Visitors.insert({
+            'date': new Date(),
+            'info': info
+        });
+    }
+});
