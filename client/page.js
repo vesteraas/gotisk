@@ -28,11 +28,15 @@ var getTitle = function (group) {
 }
 
 Template.page.onRendered(function () {
-    var documentId = Session.get('documentId');
+    var that = this;
+
+    var documentId = parseInt(Session.get('documentId'));
 
     Meteor.call('logVisit', documentId, bowser);
 
-    var that = this;
+    Meteor.call('document', documentId, function(err, document) {
+        Session.set('document', document);
+    });
 
     var getNaturalSortedKeys = function (obj) {
         var keys = [];
@@ -148,6 +152,9 @@ Template.page.onRendered(function () {
 Template.page.helpers({
     'symbols': function () {
         return Session.get('symbols');
+    },
+    'document': function () {
+        return Session.get('document');
     }
 });
 
