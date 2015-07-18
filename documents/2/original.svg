@@ -1109,9 +1109,9 @@
      inkscape:window-height="1056"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="3.3753309"
-     inkscape:cx="1114.033"
-     inkscape:cy="752.26403"
+     inkscape:zoom="2.8604499"
+     inkscape:cx="789.06931"
+     inkscape:cy="882.42904"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -1125,14 +1125,14 @@
      sodipodi:insensitive="true"
      style="display:inline">
     <image
-       sodipodi:absref="/home/werner/Work/meteor/gotisk/documents/3/image.jpg"
+       sodipodi:absref="/home/werner/Work/meteor/gotisk/documents/2/image.jpg"
        xlink:href="image.jpg"
-       width="1237"
-       height="1632"
-       preserveAspectRatio="none"
-       id="image10"
+       y="0"
        x="-9.094947e-13"
-       y="0" />
+       id="image10"
+       preserveAspectRatio="none"
+       height="1632"
+       width="1237" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -4656,7 +4656,7 @@
     <g
        id="g5156">
       <title
-         id="title5159">c</title>
+         id="title5159">s</title>
       <path
          inkscape:connector-curvature="0"
          inkscape:original-d="m 757.39734,700.35361 3.98506,-2.89112 3.4381,-2.03161 2.89113,-0.15627 1.71905,0.85952 0.23441,3.12554 -2.50043,2.65672 -8.82966,10.70498 -6.09481,11.79893 -5.31343,5.70412 -8.04827,6.79805 8.04827,-8.36083 6.48551,-9.84546 3.20368,-3.20368"
