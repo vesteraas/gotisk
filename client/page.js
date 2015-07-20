@@ -78,9 +78,6 @@ Template.page.onRendered(function () {
     var assignHoverAnims = function (groups) {
         _.each(groups, function (group, index) {
             if (index > 0) {
-                group.click(function (event) {
-                    $('#svg').tooltip({delay: 50});
-                });
                 group.hover(function (event) {
                     if (!that.symbolSelections[getTitle(group)]) {
                         this.animate({
@@ -122,8 +119,7 @@ Template.page.onRendered(function () {
             });
 
             var symbolMap = scan(groups);
-
-            var symbols = getNaturalSortedKeys(symbolMap);
+            Session.set('symbols', getNaturalSortedKeys(symbolMap));
 
             that.symbolMap = symbolMap;
             that.symbolSelections = {};
@@ -140,9 +136,6 @@ Template.page.onRendered(function () {
             });
 
             assignHoverAnims(groups);
-
-            Session.set('symbols', symbols);
-
         });
     }
 

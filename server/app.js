@@ -20,8 +20,6 @@ Router.route('/images/:id', function () {
 
     var document = Documents.findOne({id: id});
 
-    console.log(document);
-
     if (document) {
         var filePath = process.env.PWD + '/documents/' + id + '/image.jpg';
         var fs = Npm.require('fs');
