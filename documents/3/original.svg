@@ -4210,7 +4210,7 @@
     <image
        width="1096"
        height="1611"
-       xlink:href="file:///home/werner/Work/meteor/gotisk/documents/3/image.jpg"
+       xlink:href="./image.jpg"
        id="image10"
        x="0"
        y="0" />

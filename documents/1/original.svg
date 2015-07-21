@@ -48,12 +48,27 @@
      inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg4422" />
+<g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Original"
+     sodipodi:insensitive="true"
+     style="display:inline">
+    <image
+       sodipodi:absref="./image.jpg"
+       xlink:href="image.jpg"
+       width="1369"
+       height="2097"
+       preserveAspectRatio="none"
+       id="image10"
+       x="-9.094947e-13"
+       y="0" />
+  </g>
   <g
-     id="g8988">
-    <g
-       id="layer1"
-       transform="translate(-225.73065,626.93176)"
-       style="fill:none;stroke:#ff0000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.25098039;stroke-dasharray:none" />
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Outline"
+     style="display:inline">
     <g
        id="g9323"
        transform="translate(-147.44499,-63.491757)"

@@ -1129,7 +1129,7 @@
      sodipodi:insensitive="true"
      style="display:inline">
     <image
-       sodipodi:absref="/home/werner/Work/meteor/gotisk/documents/2/image.jpg"
+       sodipodi:absref="./image.jpg"
        xlink:href="image.jpg"
        width="1237"
        height="1632"
