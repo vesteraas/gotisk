@@ -42,22 +42,8 @@ if (Documents.find().count() == 0) {
             }
         ]
     });
-    /*
-     Documents.insert({
-     "id": 3,
-     "year": 1669,
-     "source": {
-     "description": "Bergen fylke, Nykirken, Ministerialbok nr. A 1 (1668-1820), Fødte og døpte 1669, side 174.",
-     "permanentURL": "http://www.arkivverket.no/URN:kb_read?idx_kildeid=8715&idx_id=8715&uid=ny&idx_side=-117"
-     },
-     "files": {
-     "image": "image.jpg",
-     "outline": "outline.svg"
-     }
-     });
-     */
     Documents.insert({
-        "id": 4,
+        "id": 3,
         "year": 1578,
         "source": {
             "description": "Herredagen 1539-1664 (Kongens retterting), Domprotokoll 1 (RA/EA-2882/A/L0001), 1578-1578, oppb: Riksarkivet.",
@@ -69,5 +55,19 @@ if (Documents.find().count() == 0) {
         },
         "flow": []
     });
+    /*
+     Documents.insert({
+     "id": 4,
+     "year": 1669,
+     "source": {
+     "description": "Bergen fylke, Nykirken, Ministerialbok nr. A 1 (1668-1820), Fødte og døpte 1669, side 174.",
+     "permanentURL": "http://www.arkivverket.no/URN:kb_read?idx_kildeid=8715&idx_id=8715&uid=ny&idx_side=-117"
+     },
+     "files": {
+     "image": "image.jpg",
+     "outline": "outline.svg"
+     }
+     });
+     */
 }
 
