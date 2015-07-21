@@ -7,8 +7,10 @@
     <body>
     <div class="container">
         <h1 style="font-weight: 600;">goti<span>.</span>sk</h1>
+
         <p class="flow-text">
-           goti.sk er en nettjeneste for deg som ønsker å lære å tyde gotisk skrift.  I tabellen under finner du kilder du kan øve deg på.
+            goti.sk er en nettjeneste for deg som ønsker å lære å tyde gotisk skrift. I tabellen under finner du kilder
+            du kan øve deg på.
         </p>
 
         <table class="hoverable">
@@ -21,10 +23,10 @@
 
             <tbody>
             {{#each documents}}
-            <tr>
-                <td><a href="/{{id}}">{{source.description}}</a></td>
-                <td>{{year}}</td>
-            </tr>
+                <tr>
+                    <td><a href="/{{id}}">{{source.description}}</a></td>
+                    <td>{{year}}</td>
+                </tr>
             {{/each}}
             </tbody>
         </table>

@@ -5,6 +5,8 @@
             <li class="symbol waves-effect"><a href="">{{.}}</a></li>
             {{/each}}
             <li id="reset" class="waves-effect"><a href="">Nullstill</a></li>
+            <li id="home" class="waves-effect"><a href="">Hjem</a></li>
+            <li id="help" class="waves-effect"><a href="">?</a></li>
         </ul>
     </div>
     <div class="container center-align">
@@ -12,6 +14,17 @@
         <img id="image" class="z-depth-5">
         <div class="container center-align">
             Kilde: <a href="{{document.source.permanentURL}}">{{document.source.description}}</a>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Hjelp</h4>
+            <p class="flow-text">Ved å holde musepekeren over bokstaver/symboler i dokumentet, vil de utheves, og vise en etikett som forteller hva de betyr.  Rekka med bokstaver/symboler over dokumentet kan du klikke på, for å utheve alle de respektive bokstaver/symboler i dokumentet.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Skjønner</a>
         </div>
     </div>
 </template>

@@ -34,7 +34,7 @@ Template.page.onRendered(function () {
 
     Meteor.call('logVisit', documentId, bowser);
 
-    Meteor.call('document', documentId, function(err, document) {
+    Meteor.call('document', documentId, function (err, document) {
         Session.set('document', document);
     });
 
@@ -199,5 +199,11 @@ Template.page.events({
             animateFadeOut(group);
             $(".nav>li").removeClass('active');
         });
+    },
+    'mousedown #home': function (event, template) {
+        window.location.href = '/';
+    },
+    'mousedown #help': function (event, template) {
+        $('#modal1').openModal();
     }
 });
