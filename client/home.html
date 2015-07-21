@@ -1,0 +1,37 @@
+<template name="home">
+    <head>
+        <title>gotisk</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+    <body>
+    <div class="container">
+        <h1 style="font-weight: 600;">goti<span>.</span>sk</h1>
+        <p class="flow-text">
+           goti.sk er en nettjeneste for deg som ønsker å lære å tyde gotisk skrift.  I tabellen under finner du kilder du kan øve deg på.
+        </p>
+
+        <table class="hoverable">
+            <thead>
+            <tr>
+                <th data-field="id">Kilde</th>
+                <th>År</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each documents}}
+            <tr>
+                <td><a href="/{{id}}">{{source.description}}</a></td>
+                <td>{{year}}</td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+
+        <p class="flow-text">
+            goti.sk er en tjeneste laget av <a href="mailto://wvesteraas@gmail.com">Werner Kvalem Vesterås</a> i 2015.
+        </p>
+    </div>
+    </body>
+</template>
