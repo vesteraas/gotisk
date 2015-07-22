@@ -1,19 +1,19 @@
-var animateFadeIn = function (group) {
-    group.animate({
+var animateFadeIn = function (symbol) {
+    symbol.animate({
         'stroke-opacity': '0.25',
         'stroke-width': 10
     }, 1000);
 }
 
-var animateFadeOut = function (group) {
-    group.animate({
+var animateFadeOut = function (symbol) {
+    symbol.animate({
         'stroke-opacity': '0.0',
         'stroke-width': 5
     }, 1000);
 }
 
-var getTitle = function (group) {
-    var children = group.children();
+var getSymbolTitle = function (symbol) {
+    var children = symbol.children();
     for (var n = 0; n < children.length; n++) {
         var child = children[n];
         if ('title' === child.type) {
@@ -58,40 +58,38 @@ Template.page.onRendered(function () {
         return result;
     }
 
-    var scan = function (groups) {
+    var createSymbolMap = function (symbols) {
         var result = {};
 
-        _.each(groups, function (group) {
-            var title = getTitle(group);
+        _.each(symbols, function (symbol) {
+            var title = getSymbolTitle(symbol);
 
             if (title) {
                 if (!result[title]) {
                     result[title] = [];
                 }
 
-                result[title].push(group);
+                result[title].push(symbol);
             }
         });
 
         return result;
     }
 
-    var assignHoverAnims = function (groups) {
-        _.each(groups, function (group, index) {
+    var assignHoverAnims = function (symbols) {
+        var shouldAnimate = function(symbol) {
+            return !that.symbolSelections[getSymbolTitle(symbol)];
+        }
+
+        _.each(symbols, function (symbol, index) {
             if (index > 0) {
-                group.hover(function (event) {
-                    if (!that.symbolSelections[getTitle(group)]) {
-                        this.animate({
-                            'stroke-opacity': '0.25',
-                            'stroke-width': 10
-                        }, 1000);
+                symbol.hover(function (event) {
+                    if (shouldAnimate(symbol)) {
+                        animateFadeIn(this);
                     }
                 }, function () {
-                    if (!that.symbolSelections[getTitle(group)]) {
-                        this.animate({
-                            'stroke-opacity': '0.0',
-                            'stroke-width': 5
-                        }, 1000);
+                    if (shouldAnimate(symbol)) {
+                        animateFadeOut(this);
                     }
                 });
             }
@@ -107,36 +105,34 @@ Template.page.onRendered(function () {
             svgElement.append(svgFragment);
             svgFragment = Snap('#svg');
 
-            $('#svg').attr('width', $('#image').width());
-            $('#svg').attr('height', $('#image').height());
+            $('#svg').width($('#image').width());
+            $('#svg').height($('#image').height());
 
-            var groups = svgFragment.selectAll('g');
-            that.groups = groups;
+            that.symbols = svgFragment.selectAll('g');
 
-            _.each(groups, function (group) {
-                group.attr({
+            _.each(that.symbols, function (symbol) {
+                symbol.attr({
                     'stroke-opacity': '0.0'
                 })
             });
 
-            var symbolMap = scan(groups);
-            Session.set('symbols', getNaturalSortedKeys(symbolMap));
+            that.symbolMap = createSymbolMap(that.symbols);
+            Session.set('symbols', getNaturalSortedKeys(that.symbolMap));
 
-            that.symbolMap = symbolMap;
             that.symbolSelections = {};
 
             $('body').keyup(function (e) {
                 if (e.keyCode == 27) { // escape key maps to keycode `27`
 
-                    _.each(groups, function (group) {
-                        animateFadeOut(group);
+                    _.each(symbols, function (symbol) {
+                        animateFadeOut(symbol);
                     });
 
                     $(".nav>li").removeClass('active');
                 }
             });
 
-            assignHoverAnims(groups);
+            assignHoverAnims(that.symbols);
         });
     }
 
@@ -152,52 +148,50 @@ Template.page.helpers({
     }
 });
 
+var getSymbol = function(target) {
+    var titleElement = target.children()[0];
+
+    if (!titleElement) {
+        return null;
+    } else {
+        if (titleElement.textContent) {
+            return target.children()[0].textContent;
+        } else {
+            return target.children()[0].innerHTML;
+        }
+    }
+}
+
 Template.page.events({
     'mousedown .symbol': function (event, template) {
         if (!$(event.currentTarget).hasClass('active')) {
             $(event.currentTarget).addClass('active');
-            var title = $(event.currentTarget).children()[0];
-
-            var symbol;
-
-            if (title.textContent) {
-                symbol = $(event.currentTarget).children()[0].textContent;
-            } else {
-                symbol = $(event.currentTarget).children()[0].innerHTML;
-            }
+            var symbol = getSymbol($(event.currentTarget));
 
             template.symbolSelections[symbol] = true;
 
-            var showGroups = template.symbolMap[symbol];
+            var symbolsToShow = template.symbolMap[symbol];
 
-            _.each(showGroups, function (group) {
-                animateFadeIn(group);
+            _.each(symbolsToShow, function (symbol) {
+                animateFadeIn(symbol);
             });
         } else {
             $(event.currentTarget).removeClass('active');
-            var title = $(event.currentTarget).children()[0];
-
-            var symbol;
-
-            if (title.textContent) {
-                symbol = $(event.currentTarget).children()[0].textContent;
-            } else {
-                symbol = $(event.currentTarget).children()[0].innerHTML;
-            }
+            var symbol = getSymbol($(event.currentTarget));
 
             template.symbolSelections[symbol] = false;
 
-            var hideGroups = template.symbolMap[symbol];
+            var symbolsToHide = template.symbolMap[symbol];
 
-            _.each(hideGroups, function (group) {
-                animateFadeOut(group);
+            _.each(symbolsToHide, function (symbol) {
+                animateFadeOut(symbol);
             });
         }
     },
     'mousedown #reset': function (event, template) {
-        _.each(template.groups, function (group) {
-            template.symbolSelections[getTitle(group)] = false;
-            animateFadeOut(group);
+        _.each(template.symbols, function (symbol) {
+            template.symbolSelections[getSymbolTitle(symbol)] = false;
+            animateFadeOut(symbol);
             $(".nav>li").removeClass('active');
         });
     },
