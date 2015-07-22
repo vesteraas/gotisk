@@ -36,6 +36,7 @@ Template.page.onRendered(function () {
 
     Meteor.call('document', documentId, function (err, document) {
         Session.set('document', document);
+        Session.set('title', 'goti.sk - ' + document.source.description);
     });
 
     var getNaturalSortedKeys = function (obj) {
