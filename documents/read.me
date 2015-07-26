@@ -9,21 +9,23 @@ This is the recommended way to work with Gotisk-images:
 
 3. Create another layer with the name 'Outline'.
 
-4. Select the layer, press CTRL+X (cut), select the 'Original' layer, and press CTRL+V (paste).
+4. Select the image, and press CTRL+X (cut).
 
-5. Lock the 'Original' layer by clicking the little padlock-icon beside it.  Make sure it is locked, by trying to move the image.
+6. Select the 'Original' layer, and then press CTRL+V (paste).  Ensure that the image overlaps the document by entering 0 in both the X and Y inputs above the drawing area.
 
-6. Select the 'Outline' layer, and use the Bezier tool to outline a letter / symbol in the image.
+7. Lock the 'Original' layer by clicking the little padlock-icon beside it.  Make sure it is locked, by trying to move the image.
 
-7. After outlining a letter / symbol, you should select all its paths, and group them together (CTRL+G) even if it consisting of only one path.
+8. Select the 'Outline' layer, and use the Bezier tool to outline a letter / symbol in the image.
 
-8. Left-click the group created above, and set the letter / symbol meaning in the 'Title' input box, and click the 'Set' button.
+9. After outlining a letter / symbol, you should select all its paths, and group them together (CTRL+G) even if it consisting of only one path.
 
-9. Repeat 7 and 8 until you are finished.
+10. Left-click the group created above, and set the letter / symbol meaning in the 'Title' input box, and click the 'Set' button.
 
-10. Export the document to SVG
+11. Repeat 7 and 8 until you are finished.
 
-11. To clean up the file after editing it with Inkscape:
+12. Export the document to SVG
+
+13. To clean up the file after editing it with Inkscape:
 
 xmlstarlet ed \
 -N inkscape="http://www.inkscape.org/namespaces/inkscape" \

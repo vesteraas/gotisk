@@ -35,19 +35,17 @@ if (Documents.find().count() == 0) {
             "outline": "outline.svg"
         }
     });
-    /*
-     Documents.insert({
-     "id": 4,
-     "year": 1669,
-     "source": {
-     "description": "Bergen fylke, Nykirken, Ministerialbok nr. A 1 (1668-1820), Fødte og døpte 1669, side 174.",
-     "permanentURL": "http://www.arkivverket.no/URN:kb_read?idx_kildeid=8715&idx_id=8715&uid=ny&idx_side=-117"
-     },
-     "files": {
-     "image": "image.jpg",
-     "outline": "outline.svg"
-     }
-     });
-     */
+    Documents.insert({
+        "id": 4,
+        "year": 1678,
+        "source": {
+            "description": "Sogn og Fjordane fylke, Sunnfjord sorenskriveri, Skifteprotokoll A 1 , 1677-1687, oppb: Statsarkivet i Bergen.",
+            "permanentURL": "http://arkivverket.no/URN:sk_read/24184/37/"
+        },
+        "files": {
+            "image": "image.jpg",
+            "outline": "outline.svg"
+        }
+    });
 }
 
