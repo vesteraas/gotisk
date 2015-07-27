@@ -2,14 +2,14 @@ var animateFadeIn = function (symbol) {
     symbol.animate({
         'stroke-opacity': '0.25',
         'stroke-width': 10
-    }, 1000);
+    }, 250);
 }
 
 var animateFadeOut = function (symbol) {
     symbol.animate({
         'stroke-opacity': '0.0',
         'stroke-width': 5
-    }, 1000);
+    }, 250);
 }
 
 var getSymbolTitle = function (symbol) {
@@ -77,22 +77,23 @@ Template.page.onRendered(function () {
     }
 
     var assignHoverAnims = function (symbols) {
-        var shouldAnimate = function(symbol) {
+        var shouldAnimate = function (symbol) {
             return !that.symbolSelections[getSymbolTitle(symbol)];
         }
 
         _.each(symbols, function (symbol, index) {
-            if (index > 0) {
-                symbol.hover(function (event) {
-                    if (shouldAnimate(symbol)) {
-                        animateFadeIn(this);
-                    }
-                }, function () {
-                    if (shouldAnimate(symbol)) {
-                        animateFadeOut(this);
-                    }
-                });
-            }
+            symbol.click(function () {
+                console.log(getSymbolTitle(symbol), symbol.node.id);
+            })
+            symbol.hover(function (event) {
+                if (shouldAnimate(symbol)) {
+                    animateFadeIn(this);
+                }
+            }, function () {
+                if (shouldAnimate(symbol)) {
+                    animateFadeOut(this);
+                }
+            });
         });
     }
 
@@ -108,7 +109,7 @@ Template.page.onRendered(function () {
             $('#svg').width($('#image').width());
             $('#svg').height($('#image').height());
 
-            that.symbols = svgFragment.selectAll('g');
+            that.symbols = svgFragment.selectAll('g[id*="g"]');
 
             _.each(that.symbols, function (symbol) {
                 symbol.attr({
@@ -123,11 +124,9 @@ Template.page.onRendered(function () {
 
             $('body').keyup(function (e) {
                 if (e.keyCode == 27) { // escape key maps to keycode `27`
-
-                    _.each(symbols, function (symbol) {
+                    _.each(that.symbols, function (symbol) {
                         animateFadeOut(symbol);
                     });
-
                     $(".nav>li").removeClass('active');
                 }
             });
@@ -148,7 +147,7 @@ Template.page.helpers({
     }
 });
 
-var getSymbol = function(target) {
+var getSymbol = function (target) {
     var titleElement = target.children()[0];
 
     if (!titleElement) {
