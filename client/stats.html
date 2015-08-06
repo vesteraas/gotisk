@@ -1,22 +1,23 @@
 <template name="stats">
-    <div class="container center-align" style="width: 500px;">
-        <h4>Browser statistics</h4>
+    <div class="container" style="width: 500px;">
+        <h4>Statistikk</h4>
+        <p class="flow-text">I tabellen nedenfor kan du se hvor mange visninger tjenesten har hatt av de forskjellige nettleserne.</p>
         <table class="bordered">
             <thead>
             <tr>
-                <td>Browser</td>
-                <td>Count</td>
+                <td>Nettleser</td>
+                <td class="right">Antall visninger</td>
             </tr>
             </thead>
             <tbody>
             {{#each browsers}}
                 <tr>
                     {{#if isTotal index }}
-                        <td><strong>{{name}}</strong></td>
-                        <td><strong>{{count}}</strong></td>
+                        <td><strong>Totalt antall visninger</strong></td>
+                        <td class="right"><strong>{{count}}</strong></td>
                     {{else}}
                         <td>{{name}}</td>
-                        <td>{{count}}</td>
+                        <td class="right">{{count}}</td>
                     {{/if}}
                 </tr>
             {{/each}}

@@ -54,17 +54,18 @@ Meteor.methods({
         });
     },
     'browsers': function () {
-        var aggregate = Visitors.aggregate({'$group' : {_id:'$info.name', count:{$sum:1}}}, {'$sort' : {'count': -1}});
+        var aggregate = Visitors.aggregate([{'$group' : {_id:'$info.name', count:{$sum:1}}}, {'$sort' : {'count': -1}}]);
 
         var browsers = [];
-        var count = 0;
+        var total = 0;
 
         _.each(aggregate, function(browser, index) {
-            browsers.push({'index': index, 'name': browser['_id'], 'count': browser['count']});
-            count += browser['count'];
+            var count = browser['count'];
+            browsers.push({'index': index, 'name': browser['_id'], 'count': count});
+            total += count;
         });
 
-        browsers.push({'index': -1, 'name': 'Total', 'count': count});
+        browsers.push({'index': -1, 'count': total});
 
         return browsers;
     }
