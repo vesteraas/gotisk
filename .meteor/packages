@@ -1,5 +1,8 @@
 meteor-platform
 materialize:materialize
+underscore
 jeremy:snapsvg
 iron:router
 flowkey:bowser
+meteorhacks:aggregate
+reactive-var

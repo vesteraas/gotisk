@@ -52,5 +52,20 @@ Meteor.methods({
         return Documents.findOne({
             id: documentId
         });
+    },
+    'browsers': function () {
+        var aggregate = Visitors.aggregate({'$group' : {_id:'$info.name', count:{$sum:1}}}, {'$sort' : {'count': -1}});
+
+        var browsers = [];
+        var count = 0;
+
+        _.each(aggregate, function(browser, index) {
+            browsers.push({'index': index, 'name': browser['_id'], 'count': browser['count']});
+            count += browser['count'];
+        });
+
+        browsers.push({'index': -1, 'name': 'Total', 'count': count});
+
+        return browsers;
     }
 });

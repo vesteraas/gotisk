@@ -1,0 +1,26 @@
+<template name="stats">
+    <div class="container center-align" style="width: 500px;">
+        <h4>Browser statistics</h4>
+        <table class="bordered">
+            <thead>
+            <tr>
+                <td>Browser</td>
+                <td>Count</td>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each browsers}}
+                <tr>
+                    {{#if isTotal index }}
+                        <td><strong>{{name}}</strong></td>
+                        <td><strong>{{count}}</strong></td>
+                    {{else}}
+                        <td>{{name}}</td>
+                        <td>{{count}}</td>
+                    {{/if}}
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

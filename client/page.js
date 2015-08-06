@@ -82,9 +82,6 @@ Template.page.onRendered(function () {
         }
 
         _.each(symbols, function (symbol, index) {
-            symbol.click(function () {
-                console.log(getSymbolTitle(symbol), symbol.node.id);
-            })
             symbol.hover(function (event) {
                 if (shouldAnimate(symbol)) {
                     animateFadeIn(this);

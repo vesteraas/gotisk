@@ -31,6 +31,10 @@
   <defs
      id="defs6">
     <inkscape:path-effect
+       effect="spiro"
+       id="path-effect6884"
+       is_visible="true" />
+    <inkscape:path-effect
        is_visible="true"
        id="path-effect6896"
        effect="spiro" />
@@ -4192,9 +4196,9 @@
      inkscape:window-height="1056"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="4.0706305"
-     inkscape:cx="226.85149"
-     inkscape:cy="1398.3267"
+     inkscape:zoom="7.6552155"
+     inkscape:cx="534.34158"
+     inkscape:cy="217.10396"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -9424,22 +9428,17 @@
          style="fill:none;stroke:#ff0000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.25098039;stroke-dasharray:none" />
     </g>
     <g
-       id="g7888">
+       id="g7891">
       <title
-         id="title7910">t</title>
-      <g
-         id="g7891">
-        <title
-           id="title7894">t</title>
-        <path
-           sodipodi:nodetypes="cccccccc"
-           style="fill:none;stroke:#ff0000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.25098039;stroke-dasharray:none"
-           d="m 317.7132,789.41353 c 1.4717,-0.31638 2.93864,-0.65491 4.40015,-1.01542 2.23231,-0.55064 4.45197,-1.15258 6.65663,-1.80519 l 5.18992,-2.59496 c 0.0376,0.004 0.073,0.0241 0.0964,0.0538 0.0234,0.0297 0.0342,0.0686 0.0311,0.10626 -0.003,0.0376 -0.0197,0.0734 -0.0433,0.10292 -0.0236,0.0295 -0.0539,0.0528 -0.0842,0.0755 l -8.12335,6.09251 -5.41557,8.68747 7.33358,-4.28732"
-           id="path7884"
-           inkscape:path-effect="#path-effect7886"
-           inkscape:original-d="m 317.7132,789.41353 4.40015,-1.01542 6.65663,-1.80519 5.18992,-2.59496 c 8.88432,-7.22567 11.64131,-8.72014 0,0.33847 l -8.12335,6.09251 -5.41557,8.68747 7.33358,-4.28732"
-           inkscape:connector-curvature="0" />
-      </g>
+         id="title7894">t</title>
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:original-d="m 317.7132,789.41353 4.40015,-1.01542 6.65663,-1.80519 5.18992,-2.59496 c 8.88432,-7.22567 11.64131,-8.72014 0,0.33847 l -8.12335,6.09251 -5.41557,8.68747 7.33358,-4.28732"
+         inkscape:path-effect="#path-effect7886"
+         id="path7884"
+         d="m 317.7132,789.41353 c 1.4717,-0.31638 2.93864,-0.65491 4.40015,-1.01542 2.23231,-0.55064 4.45197,-1.15258 6.65663,-1.80519 l 5.18992,-2.59496 c 0.0376,0.004 0.073,0.0241 0.0964,0.0538 0.0234,0.0297 0.0342,0.0686 0.0311,0.10626 -0.003,0.0376 -0.0197,0.0734 -0.0433,0.10292 -0.0236,0.0295 -0.0539,0.0528 -0.0842,0.0755 l -8.12335,6.09251 -5.41557,8.68747 7.33358,-4.28732"
+         style="fill:none;stroke:#ff0000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.25098039;stroke-dasharray:none"
+         sodipodi:nodetypes="cccccccc" />
     </g>
     <g
        id="g7904">
@@ -9908,6 +9907,8 @@
     </g>
     <g
        id="g4887">
+      <title
+         id="title6876">i</title>
       <path
          inkscape:connector-curvature="0"
          inkscape:original-d="m 370.75556,850.65892 3.5712,-3.24654 3.40887,-1.94793 0.64931,0.32465 -0.16233,2.11026 -1.29862,3.40887 -1.29862,0.81164"
@@ -10540,6 +10541,8 @@
     </g>
     <g
        id="g5061">
+      <title
+         id="title6878">e</title>
       <g
          id="g5068">
         <title
@@ -10748,6 +10751,8 @@
     </g>
     <g
        id="g5108">
+      <title
+         id="title6880">e</title>
       <g
          id="g5111">
         <title
@@ -14934,37 +14939,6 @@
          style="fill:none;stroke:#ff0000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.25098039;stroke-dasharray:none" />
     </g>
     <g
-       id="g8333">
-      <title
-         id="title8336">r</title>
-      <path
-         inkscape:connector-curvature="0"
-         inkscape:original-d="m 586.1878,1407.2944 5.12825,-1.7094 1.13961,0.5698 -0.2849,2.2792 -2.84903,3.5613 7.83483,-3.1339"
-         inkscape:path-effect="#path-effect8331"
-         id="path8329"
-         d="m 586.1878,1407.2944 5.12825,-1.7094 1.13961,0.5698 -0.2849,2.2792 -2.84903,3.5613 7.83483,-3.1339"
-         style="fill:none;stroke:#ff0000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.25098039;stroke-dasharray:none" />
-    </g>
-    <g
-       id="g8349">
-      <title
-         id="title8353">u</title>
-      <path
-         inkscape:connector-curvature="0"
-         inkscape:original-d="m 602.14236,1407.1519 5.69806,-1.4245 -3.70374,4.2736 0.99716,0.2849 7.12257,-3.4189 -2.70657,5.1283 3.13393,-1.8519"
-         inkscape:path-effect="#path-effect8340"
-         id="path8338"
-         d="m 602.14236,1407.1519 5.69806,-1.4245 -3.70374,4.2736 0.99716,0.2849 7.12257,-3.4189 -2.70657,5.1283 3.13393,-1.8519"
-         style="fill:none;stroke:#ff0000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.25098039;stroke-dasharray:none" />
-      <path
-         inkscape:connector-curvature="0"
-         inkscape:original-d="m 604.13668,1398.7473 -3.84619,-2.9915 -0.71226,-4.8433 1.99432,-3.9887 4.98581,-4.9858 5.69805,-3.7037 4.7009,-2.1368 4.84335,-0.5698 -0.14245,4.1311 -3.27638,5.1283 -5.55561,4.7009"
-         inkscape:path-effect="#path-effect8347"
-         id="path8345"
-         d="m 604.13668,1398.7473 -3.84619,-2.9915 -0.71226,-4.8433 1.99432,-3.9887 4.98581,-4.9858 5.69805,-3.7037 4.7009,-2.1368 4.84335,-0.5698 -0.14245,4.1311 -3.27638,5.1283 -5.55561,4.7009"
-         style="fill:none;stroke:#ff0000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.25098039;stroke-dasharray:none" />
-    </g>
-    <g
        id="g8359">
       <title
          id="title8362">f</title>
@@ -16292,6 +16266,31 @@
          inkscape:path-effect="#path-effect9357"
          id="path9355"
          d="m 983.56465,1523.4819 4.27637,-1.9907 5.01367,-0.7373 -0.88476,2.6543 5.23486,-0.074 5.01371,2.3593 1.6958,1.6958 -0.295,2.8755 -2.2119,1.6958 -3.76023,0.9585 -3.46533,-1.9907 2.13818,-5.3823 2.43311,-4.4239 2.72807,-3.2441 4.4238,-2.3594 3.7602,-1.2534 c -0.7945,1.0014 -1.5809,2.0091 -2.3593,3.023 -0.4699,0.6121 -0.9369,1.2266 -1.4009,1.8432 l -0.5899,0.4424"
+         style="fill:none;stroke:#ff0000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.25098039;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g6887">
+      <title
+         id="title6893">u</title>
+      <g
+         id="g8333">
+        <title
+           id="title8336">r</title>
+        <path
+           sodipodi:nodetypes="cccccccccc"
+           style="fill:none;stroke:#ff0000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.25098039;stroke-dasharray:none"
+           d="m 586.1878,1407.2944 5.12825,-1.7094 1.13961,0.5698 -0.2849,2.2792 -2.84903,3.5613 c 2.5847,-1.1103 5.19742,-2.1554 7.83483,-3.1339 3.00194,-1.1138 6.03587,-2.1413 9.09678,-3.081 l 0,2.0901 -0.52252,2.7432 4.57205,-1.8287"
+           id="path8329"
+           inkscape:path-effect="#path-effect8331"
+           inkscape:original-d="m 586.1878,1407.2944 5.12825,-1.7094 1.13961,0.5698 -0.2849,2.2792 -2.84903,3.5613 7.83483,-3.1339 9.09678,-3.081 0,2.0901 -0.52252,2.7432 4.57205,-1.8287"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:original-d="m 604.03263,1398.7264 -3.78826,-3.1351 -1.3063,-4.3108 3.527,-5.2252 5.74772,-5.6171 6.00897,-3.527 4.31079,-1.6982 2.6126,0 1.95945,1.9595 -0.78378,3.6576 -4.44142,4.7027 -5.61708,4.1802"
+         inkscape:path-effect="#path-effect6884"
+         id="path6882"
+         d="m 604.03263,1398.7264 -3.78826,-3.1351 -1.3063,-4.3108 3.527,-5.2252 5.74772,-5.6171 6.00897,-3.527 4.31079,-1.6982 2.6126,0 1.95945,1.9595 -0.78378,3.6576 -4.44142,4.7027 -5.61708,4.1802"
          style="fill:none;stroke:#ff0000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.25098039;stroke-dasharray:none" />
     </g>
   </g>
